@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Base RP Ultime</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Base RP Ultime</h1>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Recherche nom / prénom / orga">
+  <select id="sort">
+    <option value="">Trier</option>
+    <option value="nom">Nom A → Z</option>
+    <option value="orga">Orga A → Z</option>
+  </select>
+  <button onclick="openForm()">Ajouter une fiche</button>
+  <button onclick="exportData()">Exporter JSON</button>
+  <input type="file" id="importFile" style="display:none" onchange="importData(event)">
+  <button onclick="document.getElementById('importFile').click()">Importer JSON</button>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Nom</th><th>Prénom</th><th>Orga</th><th>Statut</th></tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+
+<div id="dossier"></div>
+
+<div id="form" class="hidden">
+  <h2>Fiche personne</h2>
+  <input id="nom" placeholder="Nom">
+  <input id="prenom" placeholder="Prénom">
+  <input id="orga" placeholder="Orga">
+  <input id="rang" placeholder="Rang">
+  <input id="phone" placeholder="Téléphone">
+  <input id="statut" placeholder="Statut">
+  <input type="file" id="photo">
+  <textarea id="notes" placeholder="Notes"></textarea>
+  <button onclick="savePerson()">Sauvegarder</button>
+</div>
+
+<div id="imageViewer" class="hidden" onclick="closeViewer()">
+  <img id="bigImage">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
