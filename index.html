@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>RP MDT</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div id="loginPage" class="center">
+
+<h1>RP MDT</h1>
+
+<input id="email" placeholder="email">
+<input id="password" type="password" placeholder="password">
+
+<button onclick="login()">Connexion</button>
+
+</div>
+
+
+<div id="app" class="hidden">
+
+<header>
+
+<h2>Database</h2>
+
+<input id="search" placeholder="Recherche">
+
+<button onclick="openAddPerson()">+ Personne</button>
+
+</header>
+
+
+<div class="layout">
+
+<aside>
+
+<h3>Organisations</h3>
+
+<ul id="orgList"></ul>
+
+<h3>Navigation</h3>
+
+<ul>
+
+<li onclick="loadPersons()">Personnes</li>
+<li onclick="loadVehicles()">Véhicules</li>
+<li onclick="loadProperties()">Propriétés</li>
+
+</ul>
+
+</aside>
+
+
+<main id="content"></main>
+
+</div>
+
+</div>
+
+
+<div id="modal" class="modal hidden">
+
+<div class="modalBox">
+
+<h2>Nouvelle personne</h2>
+
+<input id="firstname" placeholder="Prénom">
+<input id="lastname" placeholder="Nom">
+
+<input id="birthdate" placeholder="Date de naissance">
+<input id="phone" placeholder="Téléphone">
+
+<input id="organization" placeholder="Organisation">
+<input id="rank_org" placeholder="Rang organisation">
+
+<input id="company" placeholder="Entreprise">
+
+<textarea id="note" placeholder="Notes"></textarea>
+
+<input type="file" id="photo">
+
+<button onclick="createPerson()">Créer</button>
+
+</div>
+
+</div>
+
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
