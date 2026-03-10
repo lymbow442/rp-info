@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MDT</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+
+<body>
+
+<header>
+
+<h1>Base MDT</h1>
+
+<input id="search" placeholder="Rechercher...">
+
+<select id="filterOrganisation">
+<option value="">Organisation</option>
+</select>
+
+<select id="filterEntreprise">
+<option value="">Entreprise</option>
+</select>
+
+<button onclick="openForm()">Ajouter</button>
+
+</header>
+
+<div id="cards"></div>
+
+
+<!-- FORMULAIRE -->
+
+<div id="popup" class="popup">
+
+<h2 id="formTitle">Nouvelle fiche</h2>
+
+<input id="prenom" placeholder="Prénom">
+<input id="nom" placeholder="Nom">
+
+<input id="telephone" placeholder="Téléphone">
+
+<input id="organisation" placeholder="Organisation">
+<input id="rangOrganisation" placeholder="Rang organisation">
+
+<input id="entreprise" placeholder="Entreprise">
+<input id="rangEntreprise" placeholder="Rang entreprise">
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<label>Photo</label>
+<input type="file" id="photo">
+
+<div id="dropzone">
+
+Dépose les fichiers ici
+
+<input type="file" id="files" multiple>
+
+</div>
+
+<button onclick="savePerson()">Sauvegarder</button>
+<button onclick="closeForm()">Annuler</button>
+
+</div>
+
+
+<!-- ZOOM PHOTO -->
+
+<div id="photoViewer" onclick="closeViewer()">
+<img id="bigPhoto">
+</div>
+
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
