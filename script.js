@@ -243,14 +243,18 @@ e.preventDefault()
 document.getElementById("files").files=e.dataTransfer.files
 })
 
-await supabase.from("history").insert({
 
-person_id:id,
-action:"Modification fiche",
-date:new Date()
+async function addHistory() {
+  await supabase.from("history").insert({
+    person_id: id,
+    action: "Modification fiche",
+    date: new Date()
+  })
+}
 
-})
+addHistory()
 
 function openPerson(id){
 window.location="person.html?id="+id
+
 }
