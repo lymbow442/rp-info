@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MDT Personnel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>MDT Personnel</h1>
+
+<input type="text" id="search" placeholder="Rechercher une personne...">
+
+<button onclick="openForm()">➕ Ajouter</button>
+
+</header>
+
+<div id="cards"></div>
+
+<div id="formPopup" class="popup">
+
+<h2>Nouvelle fiche</h2>
+
+<input id="prenom" placeholder="Prénom">
+<input id="nom" placeholder="Nom">
+<input id="telephone" placeholder="Téléphone">
+<input id="orga" placeholder="Organisation">
+<input id="entreprise" placeholder="Entreprise">
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<input type="file" id="photo">
+
+<button onclick="savePerson()">Sauvegarder</button>
+<button onclick="closeForm()">Annuler</button>
+
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
