@@ -21,6 +21,14 @@ display(data)
 
 }
 
+async function addHistory() {
+  await supabase.from("history").insert({
+    person_id: id,
+    action: "Modification fiche",
+    date: new Date()
+  })
+}
+
 function display(list){
 
 const container=document.getElementById("cards")
@@ -243,18 +251,10 @@ e.preventDefault()
 document.getElementById("files").files=e.dataTransfer.files
 })
 
-
-async function addHistory() {
-  await supabase.from("history").insert({
-    person_id: id,
-    action: "Modification fiche",
-    date: new Date()
-  })
-}
-
 addHistory()
 
 function openPerson(id){
 window.location="person.html?id="+id
 
 }
+
